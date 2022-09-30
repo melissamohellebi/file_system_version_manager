@@ -1,0 +1,1 @@
+echo /sys/kernel/debug

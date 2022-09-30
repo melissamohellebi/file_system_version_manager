@@ -1,0 +1,83 @@
+README
+======
+
+
+Étape 1 : écriture
+------------------
+
+* Chaînage des blocs d'index
+
+---RÉPONSES---
+La fonctionnalité a été implémentée et fonctionne parfaitement
+* Modification des fonctions d'écriture
+
+---RÉPONSES---
+-chaque écriture alloue bien un nouveau block d'index pointant vers un nouveau block de données
+les données du fichier sont parfaitement copies uniquement si l'on écrit avec '>' mais l'ecriture 
+avec '>>' ne fonctionnent pas les données ne sont pas entierement copiées et lorsque on umount le ouichefs et on le mount on pert les données, les blocks et tout le chainage reste tel qu'il est on ne les perd pas.
+- le nouveau block est bien chainé au précédent le champ index_block est bien chainé vers ce nouveau block d'index
+
+
+
+Étape 2 : utilitaire de déboguage
+---------------------------------
+
+* Fichier du debugfs fonctionnel
+
+---RÉPONSES---
+le fichier ouichefs_debug est fonctionnel 
+
+
+Étape 3 : vue courante
+----------------------
+
+* Modification de la structure ouichefs_inode
+
+---RÉPONSES---
+implémenté et fonctionnel
+
+* Requête ioctl changement vue courante
+
+---RÉPONSES---
+implémenté et fonctionnel
+
+* Modification des fonctions d'écriture
+
+---RÉPONSES---
+implémenté et fonctionnel un nouveau champs est rajouté dans la structure ouichefs_inode 'can_write' pour déterminer si l'on a le droit d'écrire, celui-ci est positionné à 0 lorsqu'on change de version.
+
+une requette ioctl portant le numéro 2 a également été implémenter pour pouvoir revenir sur la version courante lorsqu'elle a été changé avec la requette 0
+
+
+Étape 4 : restauration
+----------------------
+
+* Requête ioctl restauration
+
+
+---RÉPONSES---
+implémentée et fonctionnelle
+
+* Blocs libérés utilisables
+
+---RÉPONSES---
+implémentée et fonctionnelle
+
+
+Étape 5 : déduplication
+-----------------------
+
+non implémentée
+
+* Modification des fonctions d'écriture
+
+---RÉPONSES---
+
+* Libération synchrone
+
+---RÉPONSES---
+
+* Libération asynchrone
+
+---RÉPONSES---
+
